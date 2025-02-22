@@ -1,4 +1,15 @@
+/* IMPORT FONT FAMILY FROM GOOGLE FONTS */
+
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* STYLE FOR ALL ELEMENTS */
+
+* {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
   font-family: "Roboto", sans-serif;
@@ -8,12 +19,7 @@ body {
   flex-direction: row;
 }
 
-* {
-  overflow-x: hidden;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* SECTION BIG IMAGE */
 
 .sc-big-img {
   position: absolute;
@@ -25,6 +31,8 @@ body {
     transform: translateY(250px);
   }
 }
+
+/* DIVISION MAIN */
 
 .dv-main {
   position: relative;
@@ -43,10 +51,14 @@ body {
   }
 }
 
+/* DIVISON MAIN (ONLY RIGHT) */
+
 .dv-main.right {
   text-align: right;
   justify-content: end;
 }
+
+/* ARROW ON THE RIGHT MAIN DIVISION (NOT FINISHED) */
 
 .arrow {
   width: 80%;
@@ -54,6 +66,8 @@ body {
   background-color: #252527;
   margin-left: auto;
 }
+
+/* SECTION MAIN TITLE AND SUBTITLE */
 
 .sc-main-title-subtitle {
   display: flex;
@@ -72,6 +86,8 @@ body {
     letter-spacing: 1px;
   }
 }
+
+/* SECTION SOCIAL BANNERS */
 
 .sc-social-banners {
   width: 100%;
