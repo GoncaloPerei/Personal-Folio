@@ -19,19 +19,6 @@ body {
   flex-direction: row;
 }
 
-/* SECTION BIG IMAGE */
-
-.sc-big-img {
-  position: absolute;
-  z-index: -1;
-  bottom: 0;
-  overflow: hidden;
-  img {
-    width: 1350px;
-    transform: translateY(250px);
-  }
-}
-
 /* DIVISION MAIN */
 
 .dv-main {
@@ -47,6 +34,12 @@ body {
     letter-spacing: 1px;
     text-transform: uppercase;
     margin-left: 100px;
+  }
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+    object-fit: contain;
   }
 }
 
@@ -69,22 +62,33 @@ body {
 /* SECTION MAIN TITLE AND SUBTITLE */
 
 .sc-main-title-subtitle {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  position: relative;
+  display: block;
   text-transform: uppercase;
+  overflow: visible;
   h1 {
     font-size: 6.25rem;
     font-weight: 700;
     line-height: 5rem;
     overflow: hidden;
   }
-  h2 {
+  /* h2 {
     font-size: 1.625rem;
     font-weight: 300;
     letter-spacing: 1px;
-  }
+  } */
 }
+
+/* SECTION BIG IMAGE */
+
+/* .sc-big-img {
+  position: relative;
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+  }
+} */
 
 /* SECTION SOCIAL BANNERS */
 
@@ -99,6 +103,6 @@ body {
     text-decoration: none;
     font-size: 1.125rem;
     font-weight: 700;
-    letter-spacing: .8px;
+    letter-spacing: 0.8px;
   }
 }
