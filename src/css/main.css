@@ -1,6 +1,6 @@
 /* IMPORT FONT FAMILY */
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
 /* STYLE FOR ALL ELEMENTS */
 
@@ -44,6 +44,7 @@ body {
 .dv-main.right {
   text-align: right;
   justify-content: end;
+  align-items: end;
   span {
     right: 0;
   }
@@ -63,11 +64,13 @@ body {
 .sc-main-title-subtitle {
   position: relative;
   display: block;
+  width: fit-content;
   text-transform: uppercase;
   overflow: visible;
   user-select: none;
   h1 {
     position: relative;
+    width: fit-content;
     font-size: 6.25rem;
     font-weight: 700;
     line-height: 5rem;
