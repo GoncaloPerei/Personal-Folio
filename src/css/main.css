@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: "Roboto";
-  src: url("/fonts/Roboto-VariableFont_wdth\,wght.ttf");
+  src: url("/fonts/Roboto-VariableFont-wdth-wght.ttf") format("truetype");
   font-display: swap;
 }
 
@@ -16,7 +16,7 @@
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", sans-serif !important;
   background-color: #d3d3d3;
   color: #252527;
 }
