@@ -28,10 +28,21 @@
     width: 100%;
   }
 
+  .sc-main-title-subtitle h1:hover {
+    line-height: 5rem;
+    span {
+      opacity: 0;
+    }
+  }
+
   .sc-social-banners {
     width: 100%;
     flex-direction: row;
     justify-content: center;
+  }
+
+  .sc-social-banners a::after {
+    display: none;
   }
 
   .sc-footer-main {
