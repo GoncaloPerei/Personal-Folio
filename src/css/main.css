@@ -83,11 +83,14 @@ body {
 /* SECTION SOCIAL BANNERS */
 
 .sc-social-banners {
+  position: relative;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 15px;
   align-items: end;
+  overflow: visible;
   a {
+    position: relative;
     width: fit-content;
     color: #252527;
     text-transform: uppercase;
@@ -95,6 +98,21 @@ body {
     font-size: 1.125rem;
     font-weight: 700;
     letter-spacing: 0.8px;
+    transition: all 0.2s ease-in-out;
+    overflow: visible;
+  }
+  a::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background-color: black;
+    transition: width 0.2s ease-in-out;
+  }
+  a:hover::after {
+    width: 100%;
   }
 }
 
