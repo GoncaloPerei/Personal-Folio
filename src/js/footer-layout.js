@@ -4,8 +4,10 @@ customElements.define(
     constructor() {
       super();
 
+      // Attach a Shadow DOM to encapsulate styles and structure
       this.attachShadow({ mode: "open" });
 
+      // Global Variables for Attributes (Allow customization through HTML attributes)
       this.phoneNumber = this.getAttribute("phone-number") || "+351999999999";
       this.contactEmail =
         this.getAttribute("contact-email") || "example@email.com";
@@ -14,66 +16,85 @@ customElements.define(
       this.githubProfile =
         this.getAttribute("github-profile") || "https://github.com";
 
-      this.render();
+      this.render(); // Call the render function to generate the component's content
     }
 
+    /**
+     * Creates a <link> element to import a stylesheet into the Shadow DOM.
+     *
+     * @param {string} href - The path to the CSS file to be imported.
+     * @returns {HTMLLinkElement} - The <link> element configured with the specified href.
+     */
     createStylesheet(href) {
-      const link = document.createElement("link");
-      link.rel = "stylesheet";
-      link.href = href;
-      return link;
+      const link = document.createElement("link"); // Create a <link> element
+      link.rel = "stylesheet"; // Set the relationship type to "stylesheet"
+      link.href = href; // Assign the provided CSS file path to the href attribute
+      return link; // Return the <link> element to be appended to the Shadow DOM
     }
 
+    /**
+     * Creates and returns a <footer> element with structured content,
+     * including contact information, social links, and a trademark message.
+     *
+     * @returns {HTMLElement} - The fully constructed footer element.
+     */
     createFooter() {
-      const footer = document.createElement("footer");
+      const footer = document.createElement("footer"); // Create the <footer> element
 
+      // Main container for the footer content
       const mainContainer = document.createElement("div");
       mainContainer.classList.add("sc-footer-main");
 
+      // Title and subtitle container
       const titleContainer = document.createElement("div");
       titleContainer.classList.add("footer-title-subtitle");
 
       const title = document.createElement("h1");
-      title.textContent = "Gonçalo Pereira";
+      title.textContent = "Gonçalo Pereira"; // Main title (name)
 
       const subtitle = document.createElement("h2");
-      subtitle.textContent = "- Full-Stack Developer";
+      subtitle.textContent = "- Full-Stack Developer"; // Subtitle (role)
 
-      titleContainer.append(title, subtitle);
+      titleContainer.append(title, subtitle); // Append title and subtitle
 
+      // Socials section
       const socialsContainer = document.createElement("div");
       socialsContainer.classList.add("footer-socials");
 
       const socialsTitle = document.createElement("h1");
-      socialsTitle.textContent = "Get in touch!";
-      socialsTitle.setAttribute("aria-label", "Contact Information");
+      socialsTitle.textContent = "Get in touch!"; // Socials section title
+      socialsTitle.setAttribute("aria-label", "Contact Information"); // Accessibility improvement
 
+      // Phone contact link
       const phoneLink = this.createSocialLink(
-        `tel:${this.phoneNumber}`,
-        "bi-telephone-fill",
-        `${this.phoneNumber}`
+        `tel:${this.phoneNumber}`, // Tel link
+        "bi-telephone-fill", // Bootstrap icon class
+        `${this.phoneNumber}` // Displayed phone number
       );
 
+      // Email contact link
       const emailLink = this.createSocialLink(
-        `mailto:${this.contactEmail}`,
-        "bi-envelope-fill",
-        `${this.contactEmail}`
+        `mailto:${this.contactEmail}`, // Mailto link
+        "bi-envelope-fill", // Bootstrap icon class
+        `${this.contactEmail}` // Displayed email
       );
 
+      // Social media icons container
       const socialIconsContainer = document.createElement("div");
       socialIconsContainer.append(
         this.createIconLink(
-          `${this.linkedinProfile}`,
-          "bi-linkedin",
-          "LinkedIn Page of Gonçalo Pereira"
+          `${this.linkedinProfile}`, // LinkedIn profile link
+          "bi-linkedin", // LinkedIn icon class
+          "LinkedIn Page of Gonçalo Pereira" // ARIA label for accessibility
         ),
         this.createIconLink(
-          `${this.githubProfile}`,
-          "bi-github",
-          "Github of Gonçalo Pereira"
+          `${this.githubProfile}`, // GitHub profile link
+          "bi-github", // GitHub icon class
+          "Github of Gonçalo Pereira" // ARIA label for accessibility
         )
       );
 
+      // Append contact details and icons to the socials container
       socialsContainer.append(
         socialsTitle,
         phoneLink,
@@ -81,69 +102,108 @@ customElements.define(
         socialIconsContainer
       );
 
+      // Append title and socials sections to the main container
       mainContainer.append(titleContainer, socialsContainer);
 
+      // Trademark section
       const trademarkContainer = document.createElement("div");
       trademarkContainer.classList.add("sc-footer-trademark");
 
+      // Left arrow decoration
       const arrowLeft = document.createElement("div");
       arrowLeft.classList.add("arrow");
 
+      // Trademark text (quote or slogan)
       const trademarkText = document.createElement("p");
       trademarkText.textContent = "Be the same without being the same";
 
+      // Right arrow decoration
       const arrowRight = document.createElement("div");
       arrowRight.classList.add("arrow");
 
+      // Append elements to the trademark container
       trademarkContainer.append(arrowLeft, trademarkText, arrowRight);
 
+      // Append the main content and trademark section to the footer
       footer.append(mainContainer, trademarkContainer);
 
-      return footer;
+      return footer; // Return the constructed footer element
     }
 
+    /**
+     * Creates a social link with an icon and text to be used for contact or social media.
+     *
+     * @param {string} href - The URL or link (e.g., "tel:", "mailto:", or a social profile link).
+     * @param {string} iconClass - The class for the icon (using Bootstrap Icons or custom icons).
+     * @param {string} text - The text to be displayed next to the icon (e.g., phone number, email, or social handle).
+     * @returns {HTMLAnchorElement} - The fully constructed <a> element representing the social link.
+     */
     createSocialLink(href, iconClass, text) {
-      const link = document.createElement("a");
-      link.href = href;
-      link.classList.add("ft-social-banner");
-      link.target = "_blank";
+      const link = document.createElement("a"); // Create a new <a> element (anchor link)
+      link.href = href; // Set the href attribute (the destination of the link)
+      link.classList.add("ft-social-banner"); // Add a custom class for styling
+      link.target = "_blank"; // Open the link in a new tab
 
+      // Create the icon element (<i>) and set its class to match the icon type
       const icon = document.createElement("i");
-      icon.classList.add("bi", iconClass);
+      icon.classList.add("bi", iconClass); // Add Bootstrap icon classes for the desired icon
 
+      // Create a <span> element to hold the text and set the displayed text content
       const span = document.createElement("span");
-      span.textContent = text;
+      span.textContent = text; // Set the visible text next to the icon (e.g., phone number, email)
 
+      // Append the icon and text to the link
       link.append(icon, span);
-      return link;
+
+      return link; // Return the constructed <a> element representing the social link
     }
 
+    /**
+     * Creates an icon link with a given icon and ARIA label for accessibility.
+     * This is typically used for social media or external profile links.
+     *
+     * @param {string} href - The URL or link (e.g., a social media profile or external site).
+     * @param {string} iconClass - The class for the icon (using Bootstrap Icons or custom icons).
+     * @param {string} ariaLabel - The ARIA label for accessibility (helps screen readers understand the link's purpose).
+     * @returns {HTMLAnchorElement} - The constructed <a> element with an icon inside.
+     */
     createIconLink(href, iconClass, ariaLabel) {
-      const link = document.createElement("a");
-      link.href = href;
-      link.target = "_blank";
-      link.setAttribute("aria-label", ariaLabel);
+      const link = document.createElement("a"); // Create a new <a> element (anchor link)
+      link.href = href; // Set the href attribute to the provided link URL
+      link.target = "_blank"; // Open the link in a new tab
+      link.setAttribute("aria-label", ariaLabel); // Set the ARIA label for accessibility (for screen readers)
 
+      // Create the icon element (<i>) and set its class to match the icon type
       const icon = document.createElement("i");
-      icon.classList.add("bi", iconClass);
+      icon.classList.add("bi", iconClass); // Add Bootstrap icon classes for the desired icon
 
+      // Append the icon to the link
       link.appendChild(icon);
-      return link;
+
+      return link; // Return the constructed <a> element with the icon inside
     }
 
+    /**
+     * Renders the content of the footer component by appending stylesheets and the footer structure
+     * to the Shadow DOM.
+     */
     render() {
-      const shadow = this.shadowRoot;
+      const shadow = this.shadowRoot; // Get the Shadow DOM root to append elements to
 
+      // Append Bootstrap Icons stylesheet for icon usage
       shadow.appendChild(
         this.createStylesheet(
           "https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
         )
       );
 
+      // Append the main CSS stylesheet for the component
       shadow.appendChild(this.createStylesheet("/src/css/main.css"));
 
+      // Append the specific CSS stylesheet for footer styles
       shadow.appendChild(this.createStylesheet("/src/css/footer-style.css"));
 
+      // Append the created footer structure to the Shadow DOM
       shadow.appendChild(this.createFooter());
     }
   }
