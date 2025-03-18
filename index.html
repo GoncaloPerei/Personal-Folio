@@ -19,7 +19,10 @@
       content="As the name says its just a regular folio, but give it a shoot, alright?"
     />
     <!-- META "OG:IMAGE" TAG NOT FINISHED -->
-    <meta property="og:image" content="https://goncalopereiraa.dev/assets/og_img.webp" />
+    <meta
+      property="og:image"
+      content="https://goncalopereiraa.dev/assets/og_img.webp"
+    />
     <meta property="og:url" content="https://goncalopereiraa.dev" />
     <meta property="og:type" content="website" />
     <title>Regular Folio - Gonçalo Pereira</title>
@@ -72,51 +75,14 @@
         </div>
       </div>
     </div>
-    <div class="dv-footer">
-      <div class="sc-footer-main">
-        <div class="footer-title-subtitle">
-          <h1>gonçalo pereira</h1>
-          <h2>- full-stack developer</h2>
-        </div>
-        <div class="footer-socials">
-          <h1>get in touch!</h1>
-          <a href="tel:+351937852724" class="ft-social-banner" target="_blank">
-            <i class="bi bi-telephone-fill"></i>
-            <span>+351 937 852 724</span>
-          </a>
-          <a
-            href="mailto:business.goncalopereira@gmail.com"
-            class="ft-social-banner"
-            target="_blank"
-          >
-            <i class="bi bi-envelope-fill"></i>
-            <span>business.goncalopereira@gmail.com</span>
-          </a>
-          <div>
-            <a
-              href="https://www.linkedin.com/in/goncalopereiraa/"
-              target="_blank"
-              aria-label="LinkedIn Page of Gonçalo Pereira"
-            >
-              <i class="bi bi-linkedin"></i>
-            </a>
-            <a
-              href="https://github.com/GoncaloPerei"
-              target="_blank"
-              aria-label="Github of Gonçalo Pereira"
-            >
-              <i class="bi bi-github"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="sc-footer-trademark">
-        <div class="arrow"></div>
-        <p>be the same without being the same</p>
-        <div class="arrow"></div>
-      </div>
-    </div>
+    <footer-layout
+      phone-number="+351937852724"
+      contact-email="business.goncalopereira@gmail.com"
+      linkedin-profile="https://www.linkedin.com/in/goncalopereiraa/"
+      github-profile="https://github.com/GoncaloPerei"
+    ></footer-layout>
 
-    <script src="/src/main.js" type="module"></script>
+    <script src="/src/main.js" type="module" defer="true"></script>
+    <script src="/src/js/footer-layout.js"></script>
   </body>
 </html>
