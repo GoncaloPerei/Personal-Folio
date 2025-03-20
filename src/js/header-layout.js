@@ -56,7 +56,7 @@ customElements.define(
       );
 
       // Append the main CSS stylesheet for the component
-      shadow.appendChild(this.createStylesheet("/src/css/main.css"));
+      shadow.appendChild(this.createStylesheet("/src/css/main-style.css"));
 
       shadow.appendChild(this.createStylesheet("/src/css/header-style.css"));
 

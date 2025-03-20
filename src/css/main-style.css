@@ -1,8 +1,4 @@
-/* IMPORT FONT FAMILY */
-
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
-
-/* STYLE FOR ALL ELEMENTS */
 
 * {
   overflow-x: hidden;
@@ -22,8 +18,6 @@ body {
   flex-direction: row;
 }
 
-/* DIVISION MAIN */
-
 .dv-main {
   width: 50%;
   height: 100vh;
@@ -39,8 +33,6 @@ body {
   }
 }
 
-/* DIVISON MAIN (ONLY RIGHT) */
-
 .dv-main.right {
   text-align: right;
   justify-content: end;
@@ -50,16 +42,12 @@ body {
   }
 }
 
-/* ARROW ON THE RIGHT MAIN DIVISION (NOT FINISHED) */
-
 .arrow {
   width: 80%;
   height: 2px;
   background-color: #252527;
   margin-left: auto;
 }
-
-/* SECTION MAIN TITLE AND SUBTITLE */
 
 .sc-main-title-subtitle {
   position: relative;
@@ -96,8 +84,6 @@ body {
   }
 }
 
-/* SECTION SOCIAL BANNERS */
-
 .sc-social-banners {
   position: relative;
   display: flex;
@@ -129,5 +115,47 @@ body {
   }
   a:hover::after {
     width: 100%;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .dv-wrapper {
+    flex-direction: column;
+  }
+
+  .dv-main {
+    width: 100%;
+    p {
+      margin-left: 0px;
+    }
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .dv-main.right {
+    height: auto;
+  }
+
+  .arrow {
+    width: 100%;
+  }
+
+  .sc-main-title-subtitle h1:hover {
+    line-height: 5rem;
+    span {
+      opacity: 0;
+    }
+  }
+
+  .sc-social-banners {
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .sc-social-banners a::after {
+    display: none;
   }
 }

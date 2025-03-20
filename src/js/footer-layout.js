@@ -198,7 +198,7 @@ customElements.define(
       );
 
       // Append the main CSS stylesheet for the component
-      shadow.appendChild(this.createStylesheet("/src/css/main.css"));
+      shadow.appendChild(this.createStylesheet("/src/css/main-style.css"));
 
       // Append the specific CSS stylesheet for footer styles
       shadow.appendChild(this.createStylesheet("/src/css/footer-style.css"));
