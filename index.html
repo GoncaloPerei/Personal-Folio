@@ -31,8 +31,16 @@
     <link rel="apple-touch-icon" href="/src/assets/images/g_icon.webp" />
   </head>
   <body>
+    <navbar-layout>
+      <ul slot="list-items">
+        <nav-li id="1" text="home"></nav-li>
+        <nav-li id="2" text="about"></nav-li>
+        <nav-li id="3" text="projects"></nav-li>
+        <nav-li id="4" class="list-item-under" text="contact"></nav-li>
+      </ul>
+    </navbar-layout>
     <div class="dv-wrapper">
-      <header-layout></header-layout>
+      <header-layout header-color="#252527"></header-layout>
       <div class="dv-main" id="dv-main-left">
         <div class="sc-main-title-subtitle">
           <h1 id="dv-main-h1">
@@ -83,7 +91,29 @@
     ></footer-layout>
 
     <script src="/src/main.js" type="module" defer="true"></script>
-    <script src="/src/js/header-layout.js"></script>
-    <script src="/src/js/footer-layout.js"></script>
+
+    <script
+      src="/src/js/layouts/navbar-layout.js"
+      type="module"
+      defer="true"
+    ></script>
+
+    <script
+      src="/src/js/components/nav-li-component.js"
+      type="module"
+      defer="true"
+    ></script>
+
+    <script
+      src="/src/js/layouts/header-layout.js"
+      type="module"
+      defer="true"
+    ></script>
+
+    <script
+      src="/src/js/layouts/footer-layout.js"
+      type="module"
+      defer="true"
+    ></script>
   </body>
 </html>

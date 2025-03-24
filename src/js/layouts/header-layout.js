@@ -12,6 +12,8 @@ customElements.define(
       // Set the header color based on the attribute 'header-color' or default to black
       this.headerColor = this.getAttribute("header-color") || "#000";
 
+      this.iconRef = this.getAttribute("icon-ref") || "hourglass";
+
       // Call the render function to generate and append the component's content
       this.render();
     }
@@ -34,10 +36,10 @@ customElements.define(
 
       // Create an icon element (hourglass icon from Bootstrap Icons)
       const icon = document.createElement("i");
-      icon.classList.add("bi", "bi-hourglass");
+      icon.classList.add("bi", `bi-${this.iconRef}`);
       icon.style.color = this.headerColor; // Set its color to match the header color
-      icon.onclick = function () {
-        console.log("ola"); // Log "ola" when the icon is clicked
+      icon.onclick = () => {
+        this.changeNavBarState();
       };
 
       // Create the right arrow decoration
@@ -49,6 +51,14 @@ customElements.define(
       header.append(arrowLeft, icon, arrowRight);
 
       return header;
+    }
+
+    changeNavBarState() {
+      const event = new CustomEvent("toggle-navbar", {
+        bubbles: true,
+        composed: true,
+      });
+      this.dispatchEvent(event);
     }
 
     /**

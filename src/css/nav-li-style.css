@@ -1,0 +1,26 @@
+li {
+  display: block;
+  opacity: 80%;
+  font-size: 5rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  transition: all 0.2s ease-in-out;
+  transform-origin: left;
+  a {
+    color: #fff;
+    overflow: visible;
+  }
+  a::after {
+    content: ".";
+  }
+}
+
+li:hover {
+  opacity: 100%;
+  transform: scale(1.2) rotate(-5deg);
+}
+
+.list-item-under {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}

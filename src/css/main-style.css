@@ -4,13 +4,16 @@
   overflow-x: hidden;
   margin: 0;
   padding: 0;
+  text-decoration: none;
   box-sizing: border-box;
 }
 
 body {
-  font-family: "Roboto", sans-serif !important;
+  font-family: "Roboto", sans-serif;
   background-color: #d3d3d3;
   color: #252527;
+  width: 100vw;
+  height: 100vh;
 }
 
 .dv-wrapper {
