@@ -1,0 +1,33 @@
+h1 {
+  display: block;
+  position: relative;
+  width: fit-content !important;
+  height: fit-content !important;
+  font-size: 6.25rem;
+  font-weight: 700;
+  line-height: 5rem;
+  transition: line-height 0.2s ease-in-out;
+  user-select: none;
+  text-transform: uppercase;
+  overflow: visible !important;
+  span {
+    display: block;
+    position: absolute;
+    top: 45%;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: normal;
+    letter-spacing: 0.8px;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+  }
+  span.right {
+    right: 0;
+  }
+}
+h1:hover {
+  line-height: 7rem;
+  span {
+    opacity: 1;
+  }
+}

@@ -42,13 +42,10 @@
     <div class="dv-wrapper">
       <header-layout header-color="#252527"></header-layout>
       <div class="dv-main" id="dv-main-left">
-        <div class="sc-main-title-subtitle">
-          <h1 id="dv-main-h1">
-            software<br />
-            developer
-            <span>- full-stack developer</span>
-          </h1>
-        </div>
+        <main-title
+          title-text="software developer"
+          span-text="- full-stack developer"
+        ></main-title>
         <img
           src="src/assets/images/goncalo_img.webp"
           alt="Goncalo Illustration"
@@ -57,13 +54,11 @@
       </div>
       <div class="dv-main right">
         <div class="arrow"></div>
-        <div class="sc-main-title-subtitle">
-          <h1>
-            gonçalo<br />
-            pereira
-            <span>fellow nerd -</span>
-          </h1>
-        </div>
+        <main-title
+          title-text="gonçalo pereira"
+          span-class="right"
+          span-text="fellow nerd -"
+        ></main-title>
         <div class="sc-social-banners">
           <a
             href="https://www.linkedin.com/in/goncalopereiraa/"
@@ -100,6 +95,12 @@
 
     <script
       src="/src/js/components/nav-li-component.js"
+      type="module"
+      defer="true"
+    ></script>
+
+    <script
+      src="/src/js/components/sc-main-title-component.js"
       type="module"
       defer="true"
     ></script>
