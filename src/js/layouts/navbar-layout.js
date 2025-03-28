@@ -1,5 +1,11 @@
 import { createStylesheet, createScript } from "../../main.js";
 
+
+/**
+ * Defines a custom HTML element <navbar-layout> that represents a navigation bar.
+ * It includes a logo, navigation links, and a header layout component.
+ * Links are dynamically generated and inserted through a slot.
+ */
 customElements.define(
   "navbar-layout",
   class extends HTMLElement {
@@ -68,7 +74,6 @@ customElements.define(
       return navBar;
     }
 
-    // Function to render the content inside the Shadow DOM
     render() {
       const shadow = this.shadowRoot;
 

@@ -1,15 +1,17 @@
 import { createStylesheet } from "../../main.js";
 
+/**
+ * Defines a custom HTML element <footer-layout> that generates a structured footer.
+ * It includes contact information, social media links, and a branding message.
+ */
 customElements.define(
   "footer-layout",
   class extends HTMLElement {
     constructor() {
       super();
 
-      // Attach a Shadow DOM to encapsulate styles and structure
       this.attachShadow({ mode: "open" });
 
-      // Global Variables for Attributes (Allow customization through HTML attributes)
       this.phoneNumber = this.getAttribute("phone-number") || "+351999999999";
       this.contactEmail =
         this.getAttribute("contact-email") || "example@email.com";
@@ -18,7 +20,7 @@ customElements.define(
       this.githubProfile =
         this.getAttribute("github-profile") || "https://github.com";
 
-      this.render(); // Call the render function to generate the component's content
+      this.render();
     }
 
     /**
@@ -172,10 +174,6 @@ customElements.define(
       return link; // Return the constructed <a> element with the icon inside
     }
 
-    /**
-     * Renders the content of the footer component by appending stylesheets and the footer structure
-     * to the Shadow DOM.
-     */
     render() {
       const shadow = this.shadowRoot;
 

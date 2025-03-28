@@ -1,5 +1,9 @@
 import { createStylesheet, createScript } from "../../main.js";
 
+/**
+ * Defines a custom HTML element <home-view> that represents the home page view.
+ * It dynamically creates and renders the structure using the Shadow DOM.
+ */
 customElements.define(
   "home-view",
   class extends HTMLElement {
@@ -11,6 +15,12 @@ customElements.define(
       this.render();
     }
 
+    /**
+     * Creates and returns the left-side section of the home view.
+     * It includes a title and an image.
+     *
+     * @returns {HTMLElement} - The left-side div element.
+     */
     _createDivLeft() {
       const mainDiv = document.createElement("div");
       mainDiv.classList.add("dv-main");
@@ -29,6 +39,12 @@ customElements.define(
       return mainDiv;
     }
 
+    /**
+     * Creates and returns the right-side section of the home view.
+     * It includes an arrow, a title, and social media links.
+     *
+     * @returns {HTMLElement} - The right-side div element.
+     */
     _createDivRight() {
       const mainDiv = document.createElement("div");
       mainDiv.classList.add("dv-main", "right");
@@ -44,6 +60,7 @@ customElements.define(
       const scSocialBanner = document.createElement("div");
       scSocialBanner.classList.add("sc-social-banners");
 
+      // Define social media links
       const links = [
         {
           href: "https://www.linkedin.com/in/goncalopereiraa/",
@@ -62,6 +79,7 @@ customElements.define(
         },
       ];
 
+      // Create and append social media links
       links.forEach((link) => {
         const a = document.createElement("a");
         a.href = link.href;
@@ -83,12 +101,17 @@ customElements.define(
       return mainDiv;
     }
 
+    /**
+     * Creates and returns the complete home view layout.
+     * It contains both left and right sections.
+     *
+     * @returns {HTMLElement} - The home view wrapper element.
+     */
     createHomeView() {
       const wrapper = document.createElement("div");
       wrapper.classList.add("dv-wrapper");
 
       const mainDivLeft = this._createDivLeft();
-
       const mainDivRight = this._createDivRight();
 
       wrapper.append(mainDivLeft, mainDivRight);

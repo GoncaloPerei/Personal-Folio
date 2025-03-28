@@ -1,5 +1,9 @@
 import { createStylesheet } from "../../main.js";
 
+/**
+ * Defines a custom HTML element <main-title> that dynamically renders
+ * a styled title with an optional span element.
+ */
 customElements.define(
   "main-title",
   class extends HTMLElement {
@@ -9,13 +13,18 @@ customElements.define(
       this.attachShadow({ mode: "open" });
 
       this.titleText = this.getAttribute("title-text") || "lorem";
-
       this.spanClass = this.getAttribute("span-class") || "";
       this.spanText = this.getAttribute("span-text") || "lorem";
 
       this.render();
     }
 
+    /**
+     * Creates and returns an <h1> element representing the main title.
+     * The title includes an optional <span> for additional text.
+     *
+     * @returns {HTMLElement} - The constructed title element.
+     */
     createMainTitleItem() {
       const mainTitle = document.createElement("h1");
       mainTitle.textContent = `${this.titleText}`;

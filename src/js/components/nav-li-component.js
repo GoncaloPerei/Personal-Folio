@@ -1,5 +1,10 @@
 import { createStylesheet } from "../../main.js";
 
+/**
+ * Defines a custom HTML element <nav-li> that represents a navigation list item.
+ * It dynamically creates an <li> element containing an anchor (<a>) element
+ * with attributes set based on the component's properties.
+ */
 customElements.define(
   "nav-li",
   class extends HTMLElement {

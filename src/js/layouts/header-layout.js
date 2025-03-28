@@ -1,20 +1,20 @@
 import { createStylesheet } from "../../main.js";
 
+/**
+ * Defines a custom HTML element <header-layout> that represents a header.
+ * It includes left and right arrow decorations and a central icon that can trigger actions.
+ */
 customElements.define(
   "header-layout",
   class extends HTMLElement {
     constructor() {
       super();
 
-      // Attach a Shadow DOM to encapsulate styles and structure
       this.attachShadow({ mode: "open" });
 
-      // Set the header color based on the attribute 'header-color' or default to black
       this.headerColor = this.getAttribute("header-color") || "#000";
-
       this.iconRef = this.getAttribute("icon-ref") || "hourglass";
 
-      // Call the render function to generate and append the component's content
       this.render();
     }
 
@@ -53,6 +53,9 @@ customElements.define(
       return header;
     }
 
+    /**
+     * Dispatches a custom event to toggle the navbar state when the icon is clicked.
+     */
     changeNavBarState() {
       const event = new CustomEvent("toggle-navbar", {
         bubbles: true,
@@ -61,10 +64,6 @@ customElements.define(
       this.dispatchEvent(event);
     }
 
-    /**
-     * Renders the content of the header component by appending stylesheets
-     * and the header structure to the Shadow DOM.
-     */
     render() {
       const shadow = this.shadowRoot;
 

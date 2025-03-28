@@ -10,14 +10,21 @@ export function createStylesheet(href) {
   const link = document.createElement("link"); // Create a <link> element
   link.rel = "stylesheet"; // Set the relationship type to "stylesheet"
   link.href = href; // Assign the provided CSS file path to the href attribute
-  return link; // Return the <link> element to be appended to the Shadow DOM
+  return link;
 }
 
+/**
+ * Creates a <script> element with the specified source URL.
+ * The script is set to be a module, deferred, and has its source URL assigned.
+ *
+ * @param {string} src - The source URL of the script to be loaded.
+ * @returns {HTMLScriptElement} - The created <script> element.
+ */
 export function createScript(src) {
-  const script = document.createElement("script");
-  script.type = "module";
-  script.src = src;
-  script.defer = true;
+  const script = document.createElement("script"); // Create the <script> element
+  script.type = "module";// Set the script type to "module" to support ES6 modules
+  script.src = src; // Set the script source to the provided URL
+  script.defer = true;  // Set the "defer" attribute to ensure the script is executed after the document is parsed
 
   return script;
 }
