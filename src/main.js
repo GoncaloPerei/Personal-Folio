@@ -13,6 +13,15 @@ export function createStylesheet(href) {
   return link; // Return the <link> element to be appended to the Shadow DOM
 }
 
+export function createScript(src) {
+  const script = document.createElement("script");
+  script.type = "module";
+  script.src = src;
+  script.defer = true;
+
+  return script;
+}
+
 // Wait until the 'navbar-layout' component is fully defined
 customElements.whenDefined("navbar-layout").then(() => {
   // After the 'navbar-layout' component is defined, select the first 'navbar-layout' in the DOM

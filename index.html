@@ -39,45 +39,12 @@
         <nav-li id="4" class="list-item-under" text="contact"></nav-li>
       </ul>
     </navbar-layout>
+
     <div class="dv-wrapper">
       <header-layout header-color="#252527"></header-layout>
-      <div class="dv-main" id="dv-main-left">
-        <main-title
-          title-text="software developer"
-          span-text="- full-stack developer"
-        ></main-title>
-        <img
-          src="src/assets/images/goncalo_img.webp"
-          alt="Goncalo Illustration"
-          loading="lazy"
-        />
-      </div>
-      <div class="dv-main right">
-        <div class="arrow"></div>
-        <main-title
-          title-text="gonçalo pereira"
-          span-class="right"
-          span-text="fellow nerd -"
-        ></main-title>
-        <div class="sc-social-banners">
-          <a
-            href="https://www.linkedin.com/in/goncalopereiraa/"
-            target="_blank"
-          >
-            <i class="bi bi-linkedin"></i>
-            <span>linkedin</span>
-          </a>
-          <a href="https://github.com/GoncaloPerei" target="_blank">
-            <i class="bi bi-github"></i>
-            <span>github</span>
-          </a>
-          <a href="mailto:business.goncalopereira@gmail.com" target="_blank">
-            <i class="bi bi-envelope-fill"></i>
-            <span>email</span>
-          </a>
-        </div>
-      </div>
+      <router-view></router-view>
     </div>
+
     <footer-layout
       phone-number="+351937852724"
       contact-email="business.goncalopereira@gmail.com"
@@ -85,22 +52,16 @@
       github-profile="https://github.com/GoncaloPerei"
     ></footer-layout>
 
-    <script src="/src/main.js" type="module" defer="true"></script>
+    <script src="/src/js/router/router.js" type="module" defer="true"></script>
+
+    <script
+      src="/src/js/router/router-view.js"
+      type="module"
+      defer="true"
+    ></script>
 
     <script
       src="/src/js/layouts/navbar-layout.js"
-      type="module"
-      defer="true"
-    ></script>
-
-    <script
-      src="/src/js/components/nav-li-component.js"
-      type="module"
-      defer="true"
-    ></script>
-
-    <script
-      src="/src/js/components/sc-main-title-component.js"
       type="module"
       defer="true"
     ></script>

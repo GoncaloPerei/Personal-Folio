@@ -1,4 +1,4 @@
-import { createStylesheet } from "../../main.js";
+import { createStylesheet, createScript } from "../../main.js";
 
 customElements.define(
   "navbar-layout",
@@ -80,6 +80,8 @@ customElements.define(
 
       shadow.appendChild(createStylesheet("/src/css/main-style.css"));
       shadow.appendChild(createStylesheet("/src/css/navbar-style.css"));
+
+      shadow.appendChild(createScript("/src/js/components/nav-li-component.js"))
 
       shadow.appendChild(this.createNav());
     }
